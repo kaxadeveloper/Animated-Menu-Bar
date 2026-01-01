@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #d6099c;
+    font-family: "Montserrat", sans-serif;
+}
+
+nav {
+    position: relative;
+    width: 170px;
+    height: 80px;
+    background: linear-gradient(to bottom, red, yellow);
+    border-radius: 5px;
+    border: 1px solid red;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .4s;
+}
+
+nav:before {
+    content: "MENU";
+    position: absolute;
+    color: #7d0b94;
+    font-size: 30px;
+    font-weight: 800;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 80px;
+    background: linear-gradient(to bottom, red, yellow);
+    z-index: 10;
+    transition: all .4s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 80px;
+}
+
+nav ul a {
+    color: #7d0b94;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0 -50px;
+    border-radius: 5px;
+    transition: all .4s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+ul a:hover,
+ul a.active {
+    background: #e225ac;
+}
+
+nav._expand {
+    width: 730px;
+}
+
+nav._expand ul a {
+    margin: 0 10px;
+    padding: 10px 15px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+nav._expand:before{
+    opacity: 0;
+    pointer-events: none;
+}
